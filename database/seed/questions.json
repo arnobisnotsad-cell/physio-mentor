@@ -1,0 +1,53 @@
+[
+  {
+    "item": "Plasma",
+    "questions": [
+      {
+        "question_text": "What is blood plasma? Describe its composition.",
+        "answer_definition": "Plasma is the liquid, non-cellular component of blood, constituting approximately 55% of total blood volume. It is a pale yellow fluid.",
+        "answer_intro": "Blood is composed of cells suspended in a fluid medium called plasma.",
+        "answer_explanation": "Plasma is composed of water (91-92%), proteins (7-8%), and other solutes (1-2%) including electrolytes, nutrients, hormones, and waste products.",
+        "answer_mechanism": "1. Water acts as solvent\\n2. Proteins (albumin, globulins, fibrinogen) maintain oncotic pressure and serve as transporters\\n3. Electrolytes (Na+, K+, Cl-) maintain osmotic balance\\n4. Nutrients include glucose, amino acids, lipids\\n5. Waste products include urea, creatinine, bilirubin",
+        "answer_flowchart": "Blood → Cellular elements (45%) + Plasma (55%)\\nPlasma → Water (91%) + Proteins (7-8%) + Solutes (1-2%)\\nProteins → Albumin (60%) + Globulins (36%) + Fibrinogen (4%)",
+        "answer_clinical": "Low plasma albumin (hypoalbuminaemia) causes oedema due to reduced oncotic pressure. Seen in liver disease, nephrotic syndrome, malnutrition.",
+        "answer_high_yield": "• Plasma = 55% of blood volume\\n• Water = 91-92% of plasma\\n• Albumin is the most abundant plasma protein\\n• Fibrinogen is essential for clotting",
+        "answer_viva": "Q: What happens if plasma protein levels drop?\\nA: Oedema forms due to reduced oncotic pressure, fluid leaks into interstitium.\\n\\nQ: How does plasma differ from serum?\\nA: Serum = plasma minus fibrinogen and clotting factors (plasma that has clotted).",
+        "guyton_chapter": "Chapter 36 – Red Blood Cells, Anemia, and Polycythemia"
+      }
+    ]
+  },
+  {
+    "item": "Oxygen Dissociation Curve",
+    "questions": [
+      {
+        "question_text": "Describe the Oxygen-Haemoglobin Dissociation Curve and factors affecting it.",
+        "answer_definition": "The oxygen-haemoglobin dissociation curve is a sigmoid (S-shaped) curve that depicts the relationship between the partial pressure of oxygen (PO2) and the percentage saturation of haemoglobin with oxygen.",
+        "answer_intro": "Haemoglobin binds oxygen in a cooperative manner, meaning binding of one O2 molecule facilitates binding of subsequent molecules.",
+        "answer_explanation": "At high PO2 (lungs ~100 mmHg): Hb is 97-98% saturated. At tissue PO2 (~40 mmHg): Hb releases O2, saturation drops to ~75%. The sigmoid shape reflects cooperative binding.",
+        "answer_mechanism": "1. First O2 binds to one haem group (low affinity initially)\\n2. Conformational change increases affinity for subsequent O2\\n3. T-form (tense, low affinity) → R-form (relaxed, high affinity)\\n4. Bohr effect: ↑CO2 / ↑H+ / ↑temperature → right shift → more O2 release\\n5. 2,3-DPG binds to β chains → right shift",
+        "answer_flowchart": "Right Shift (↓O2 affinity, ↑O2 delivery):\\n↑ CO2 / ↑ H+ / ↑ Temp / ↑ 2,3-DPG\\n\\nLeft Shift (↑O2 affinity, ↓O2 delivery):\\n↓ CO2 / ↓ H+ / ↓ Temp / ↓ 2,3-DPG / CO poisoning / HbF",
+        "answer_clinical": "Carbon monoxide poisoning: CO binds Hb 250x stronger than O2, shifts curve left → tissues starved of O2 despite normal PO2. Treatment: 100% O2.",
+        "answer_high_yield": "• Sigmoid curve due to cooperative binding\\n• P50 = 26 mmHg (PO2 at 50% saturation)\\n• Right shift = Bohr effect (↑CO2, ↑H+, ↑Temp, ↑2,3-DPG)\\n• HbF has left shift (higher O2 affinity) — essential for fetal O2 acquisition",
+        "answer_viva": "Q: Why is the curve sigmoid and not linear?\\nA: Cooperative binding — each O2 molecule increases affinity for the next.\\n\\nQ: What is P50?\\nA: PO2 at which Hb is 50% saturated = 26 mmHg normally.\\n\\nQ: How does 2,3-DPG affect the curve?\\nA: Right shift — ↑2,3-DPG (high altitude, anaemia) promotes O2 unloading to tissues.",
+        "guyton_chapter": "Chapter 41 – Transport of Oxygen and Carbon Dioxide in Blood and Tissue Fluids"
+      }
+    ]
+  },
+  {
+    "item": "Starling's Law",
+    "questions": [
+      {
+        "question_text": "State and explain Starling's Law of the Heart.",
+        "answer_definition": "Starling's Law states that the force of cardiac contraction is directly proportional to the initial length of the cardiac muscle fibres (end-diastolic volume), within physiological limits.",
+        "answer_intro": "Also known as the Frank-Starling mechanism, this intrinsic property allows the heart to automatically adjust its output to match venous return.",
+        "answer_explanation": "As venous return increases, the ventricle fills more (↑ EDV), stretching cardiac muscle fibres. Stretched fibres develop greater tension during contraction, ejecting more blood (↑ SV). This ensures cardiac output matches venous return without neural input.",
+        "answer_mechanism": "1. ↑ Venous return → ↑ EDV (preload)\\n2. Sarcomere length increases (optimal ~2.2 μm)\\n3. More actin-myosin cross-bridges formed\\n4. Greater Ca2+ sensitivity at stretched lengths\\n5. ↑ Force of contraction → ↑ Stroke Volume\\n6. CO = SV × HR — both maintained automatically",
+        "answer_flowchart": "↑ Venous Return → ↑ EDV → ↑ Sarcomere stretch → ↑ Cross-bridge formation → ↑ SV → ↑ CO",
+        "answer_clinical": "In heart failure, the Starling curve is flattened and depressed — the heart cannot increase SV despite increased filling. Clinically: pulmonary oedema from ↑ EDV without ↑ CO.",
+        "answer_high_yield": "• Frank-Starling = heterometric autoregulation\\n• Works without nervous system input\\n• Optimal sarcomere length = 2.0–2.2 μm\\n• Explains why both ventricles pump equal volumes\\n• Curve is depressed in heart failure",
+        "answer_viva": "Q: What is preload?\\nA: The degree of ventricular stretch at end-diastole, determined by EDV.\\n\\nQ: What happens beyond optimal sarcomere length?\\nA: Descending limb — overlap of actin filaments, reduced cross-bridges, decreased force.\\n\\nQ: How does Starling's law equalise right and left ventricular outputs?\\nA: If RV pumps more → ↑ venous return to LV → LV stretches more → ↑ LV output automatically.",
+        "guyton_chapter": "Chapter 22 – Cardiac Output, Venous Return, and Their Regulation"
+      }
+    ]
+  }
+]

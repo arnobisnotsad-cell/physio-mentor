@@ -1,0 +1,89 @@
+[
+  {
+    "term": "Blood & Body Fluids",
+    "cards": [
+      {
+        "title": "Composition of Blood",
+        "order_index": 1,
+        "items": [
+          { "title": "Plasma", "order_index": 1 },
+          { "title": "Red Blood Cells (RBCs)", "order_index": 2 },
+          { "title": "White Blood Cells (WBCs)", "order_index": 3 },
+          { "title": "Platelets", "order_index": 4 }
+        ]
+      },
+      {
+        "title": "Body Fluid Compartments",
+        "order_index": 2,
+        "items": [
+          { "title": "Intracellular Fluid (ICF)", "order_index": 1 },
+          { "title": "Extracellular Fluid (ECF)", "order_index": 2 },
+          { "title": "Fluid Balance", "order_index": 3 }
+        ]
+      },
+      {
+        "title": "Haemoglobin",
+        "order_index": 3,
+        "items": [
+          { "title": "Structure of Haemoglobin", "order_index": 1 },
+          { "title": "Oxygen Dissociation Curve", "order_index": 2 },
+          { "title": "Types of Haemoglobin", "order_index": 3 }
+        ]
+      }
+    ]
+  },
+  {
+    "term": "Cardiovascular System",
+    "cards": [
+      {
+        "title": "Cardiac Cycle",
+        "order_index": 1,
+        "items": [
+          { "title": "Systole and Diastole", "order_index": 1 },
+          { "title": "Heart Sounds", "order_index": 2 },
+          { "title": "Pressure-Volume Loop", "order_index": 3 }
+        ]
+      },
+      {
+        "title": "Cardiac Output",
+        "order_index": 2,
+        "items": [
+          { "title": "Starling's Law", "order_index": 1 },
+          { "title": "Factors Affecting CO", "order_index": 2 },
+          { "title": "Measurement of CO", "order_index": 3 }
+        ]
+      },
+      {
+        "title": "Blood Pressure",
+        "order_index": 3,
+        "items": [
+          { "title": "Regulation of BP", "order_index": 1 },
+          { "title": "Baroreceptor Reflex", "order_index": 2 },
+          { "title": "Renin-Angiotensin-Aldosterone System", "order_index": 3 }
+        ]
+      }
+    ]
+  },
+  {
+    "term": "Respiratory System",
+    "cards": [
+      {
+        "title": "Lung Volumes and Capacities",
+        "order_index": 1,
+        "items": [
+          { "title": "Tidal Volume, IRV, ERV", "order_index": 1 },
+          { "title": "Vital Capacity", "order_index": 2 },
+          { "title": "Residual Volume", "order_index": 3 }
+        ]
+      },
+      {
+        "title": "Gas Exchange",
+        "order_index": 2,
+        "items": [
+          { "title": "Diffusion of O2 and CO2", "order_index": 1 },
+          { "title": "Ventilation-Perfusion Ratio", "order_index": 2 }
+        ]
+      }
+    ]
+  }
+]
