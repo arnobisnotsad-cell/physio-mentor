@@ -1,5 +1,5 @@
-"""
-bot.py — PhysioMentor AI
+﻿"""
+bot.py â€” PhysioMentor AI
 Entry point. Initialises DB, registers all handlers, starts bot.
 
 Modes:
@@ -16,7 +16,7 @@ from telegram.ext import Application, ApplicationBuilder
 from config import BOT_TOKEN, WEBHOOK_URL, PORT
 from database.db import init_db, populate_search_index
 
-# ─── Logging ──────────────────────────────────────────────────────────────────
+# â”€â”€â”€ Logging â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 
 logging.basicConfig(
     level=logging.INFO,
@@ -35,7 +35,7 @@ def build_app() -> Application:
 
     app = ApplicationBuilder().token(BOT_TOKEN).build()
 
-    # Register handlers — ORDER MATTERS
+    # Register handlers â€” ORDER MATTERS
     # ConversationHandlers must be registered before generic CallbackQueryHandlers
     from handlers import ask_guyton, mcq, search  # ConversationHandlers first
     ask_guyton.register(app)
@@ -53,18 +53,19 @@ def build_app() -> Application:
 
 async def startup(app: Application) -> None:
     """Run once before the bot starts processing updates."""
-    logger.info("Initialising database…")
+    logger.info("Initialising databaseâ€¦")
     await init_db()
-    logger.info("Building search index…")
+    logger.info("Building search indexâ€¦")
     await populate_search_index()
-    logger.info("Bot ready ✓")
+    logger.info("Bot ready âœ“")
 
 
 def main() -> None:
+    import asyncio
+    asyncio.set_event_loop(asyncio.new_event_loop())
     app = build_app()
-
     if WEBHOOK_URL:
-        # ── Production: webhook ──────────────────────────────────────────────
+        # â”€â”€ Production: webhook â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
         logger.info("Starting in WEBHOOK mode: %s", WEBHOOK_URL)
         app.run_webhook(
             listen="0.0.0.0",
@@ -74,7 +75,7 @@ def main() -> None:
             close_loop=False,
         )
     else:
-        # ── Development: polling ─────────────────────────────────────────────
+        # â”€â”€ Development: polling â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
         logger.info("Starting in POLLING mode (development)")
 
         async def _run():
@@ -97,3 +98,4 @@ def main() -> None:
 
 if __name__ == "__main__":
     main()
+

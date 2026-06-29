@@ -1,11 +1,1 @@
-[
-  { "name": "Blood & Body Fluids",       "subject": "physiology" },
-  { "name": "Cardiovascular System",     "subject": "physiology" },
-  { "name": "Respiratory System",        "subject": "physiology" },
-  { "name": "Renal Physiology",          "subject": "physiology" },
-  { "name": "Gastrointestinal System",   "subject": "physiology" },
-  { "name": "Endocrinology",             "subject": "physiology" },
-  { "name": "Nervous System",            "subject": "physiology" },
-  { "name": "Muscle Physiology",         "subject": "physiology" },
-  { "name": "Reproductive Physiology",   "subject": "physiology" }
-]
+﻿[{"id":1,"name":"Physiology","subject":"physiology"}]
