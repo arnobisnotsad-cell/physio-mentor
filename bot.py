@@ -61,8 +61,6 @@ async def startup(app: Application) -> None:
 
 
 def main() -> None:
-    import asyncio
-    asyncio.set_event_loop(asyncio.new_event_loop())
     app = build_app()
     if WEBHOOK_URL:
         # â”€â”€ Production: webhook â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
@@ -98,4 +96,5 @@ def main() -> None:
 
 if __name__ == "__main__":
     main()
+
 
