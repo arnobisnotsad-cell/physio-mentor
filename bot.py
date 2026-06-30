@@ -46,9 +46,17 @@ def build_app() -> Application:
     return app
 
 
+async def _seed_database() -> None:
+    """Idempotent — safe to run on every startup."""
+    logger.info("Seeding database…")
+    import seed
+    await seed.main()
+
+
 async def _run_webhook(app: Application) -> None:
     logger.info("Initialising database…")
     await init_db()
+    await _seed_database()
     logger.info("Building search index…")
     await populate_search_index()
     logger.info("Bot ready ✓")
@@ -77,6 +85,7 @@ async def _run_webhook(app: Application) -> None:
 async def _run_polling(app: Application) -> None:
     logger.info("Initialising database…")
     await init_db()
+    await _seed_database()
     logger.info("Building search index…")
     await populate_search_index()
     logger.info("Bot ready ✓")
