@@ -35,3 +35,81 @@ def build_app() -> Application:
 
     from handlers import ask_guyton, mcq, search
     ask_guyton.register(app)
+    mcq.register(app)
+    search.register(app)
+
+    from handlers import menu, study, progress
+    menu.register(app)
+    study.register(app)
+    progress.register(app)
+
+    return app
+
+
+async def _run_webhook(app: Application) -> None:
+    logger.info("Initialising database…")
+    await init_db()
+    logger.info("Building search index…")
+    await populate_search_index()
+    logger.info("Bot ready ✓")
+
+    logger.info("Starting in WEBHOOK mode: %s", WEBHOOK_URL)
+
+    await app.initialize()
+    await app.start()
+    await app.updater.start_webhook(
+        listen="0.0.0.0",
+        port=PORT,
+        webhook_url=WEBHOOK_URL,
+        drop_pending_updates=True,
+    )
+    logger.info("Bot is running (webhook). Press Ctrl+C to stop.")
+    try:
+        await asyncio.Event().wait()
+    except (KeyboardInterrupt, SystemExit):
+        pass
+    finally:
+        await app.updater.stop()
+        await app.stop()
+        await app.shutdown()
+
+
+async def _run_polling(app: Application) -> None:
+    logger.info("Initialising database…")
+    await init_db()
+    logger.info("Building search index…")
+    await populate_search_index()
+    logger.info("Bot ready ✓")
+
+    logger.info("Starting in POLLING mode (development)")
+
+    await app.initialize()
+    await app.start()
+    await app.updater.start_polling(drop_pending_updates=True)
+    logger.info("Bot is running (polling). Press Ctrl+C to stop.")
+    try:
+        await asyncio.Event().wait()
+    except (KeyboardInterrupt, SystemExit):
+        pass
+    finally:
+        await app.updater.stop()
+        await app.stop()
+        await app.shutdown()
+
+
+def main() -> None:
+    print("MAIN STARTED", flush=True)
+    app = build_app()
+    print("APP BUILT", flush=True)
+
+    if WEBHOOK_URL:
+        print("ENTERING WEBHOOK MODE", flush=True)
+        asyncio.run(_run_webhook(app))
+    else:
+        print("ENTERING POLLING MODE", flush=True)
+        asyncio.run(_run_polling(app))
+
+
+if __name__ == "__main__":
+    print("SCRIPT STARTED", flush=True)
+    main()
