@@ -5,7 +5,6 @@ load_dotenv()
 
 BOT_TOKEN = os.getenv("BOT_TOKEN", "")
 GEMINI_KEYS = [v for k, v in sorted(os.environ.items()) if k.startswith("GEMINI_KEY_") and v]
-]
 WEBHOOK_URL = os.getenv("WEBHOOK_URL", "")
 PORT = int(os.getenv("PORT", 8080))
 DB_PATH = os.getenv("DB_PATH", "physio_mentor.db")
@@ -30,5 +29,6 @@ Each object must have exactly these keys: q, options, correct, explanation, why_
 
 ITEMS_PER_PAGE = 8
 CACHE_TTL_SECONDS = 600
+
 
 
