@@ -1,15 +1,10 @@
-import os
+﻿import os
 from dotenv import load_dotenv
 
 load_dotenv()
 
 BOT_TOKEN = os.getenv("BOT_TOKEN", "")
-GEMINI_KEYS = [
-    k for k in [
-        os.getenv("GEMINI_KEY_1"),
-        os.getenv("GEMINI_KEY_2"),
-        os.getenv("GEMINI_KEY_3"),
-    ] if k
+GEMINI_KEYS = [v for k, v in sorted(os.environ.items()) if k.startswith("GEMINI_KEY_") and v]
 ]
 WEBHOOK_URL = os.getenv("WEBHOOK_URL", "")
 PORT = int(os.getenv("PORT", 8080))
@@ -35,3 +30,5 @@ Each object must have exactly these keys: q, options, correct, explanation, why_
 
 ITEMS_PER_PAGE = 8
 CACHE_TTL_SECONDS = 600
+
+

@@ -1,9 +1,9 @@
-"""
+﻿"""
 services/gemini.py
 Async Gemini 1.5 Flash wrapper with:
  - API key rotation on 429 errors
  - Simple in-memory prompt cache (TTL-based)
- - Never crashes — returns a user-friendly fallback string on total failure
+ - Never crashes â€” returns a user-friendly fallback string on total failure
 """
 
 import asyncio
@@ -18,9 +18,9 @@ from config import GEMINI_KEYS, CACHE_TTL_SECONDS, GUYTON_SYSTEM, MCQ_SYSTEM
 
 logger = logging.getLogger(__name__)
 
-GEMINI_URL = "https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent"
+GEMINI_URL = "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent"
 
-_cache: dict[str, tuple[str, float]] = {}  # key → (response, expiry_timestamp)
+_cache: dict[str, tuple[str, float]] = {}  # key â†’ (response, expiry_timestamp)
 _key_index = 0
 _key_lock = asyncio.Lock()
 
@@ -94,13 +94,13 @@ class GeminiService:
         use_cache: bool = True,
     ) -> str:
         if not GEMINI_KEYS:
-            return "⚠️ No Gemini API keys configured. Please check your .env file."
+            return "âš ï¸ No Gemini API keys configured. Please check your .env file."
 
         ck = _cache_key(prompt, system)
         if use_cache:
             cached = _get_cached(ck)
             if cached:
-                logger.debug("Cache hit for prompt: %s…", prompt[:40])
+                logger.debug("Cache hit for prompt: %sâ€¦", prompt[:40])
                 return cached
 
         for attempt in range(len(GEMINI_KEYS)):
@@ -111,7 +111,7 @@ class GeminiService:
                     _set_cache(ck, result)
                 return result
             except RateLimitError:
-                logger.warning("Key %s rate-limited, rotating…", key[:8])
+                logger.warning("Key %s rate-limited, rotatingâ€¦", key[:8])
                 continue
             except httpx.HTTPStatusError as e:
                 logger.error("HTTP error from Gemini: %s", e)
@@ -120,7 +120,7 @@ class GeminiService:
                 logger.error("Gemini call failed: %s", e)
                 continue
 
-        return "⚠️ AI is currently busy. Please try again in a few minutes."
+        return "âš ï¸ AI is currently busy. Please try again in a few minutes."
 
     async def ask_guyton(self, question: str) -> str:
         return await self.generate(prompt=question, system=GUYTON_SYSTEM)
@@ -155,3 +155,4 @@ class GeminiService:
 
 # Module-level singleton
 gemini = GeminiService()
+
